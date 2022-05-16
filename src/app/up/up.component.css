@@ -1,0 +1,29 @@
+h2, p {
+    color: white;
+    text-align: center;
+}
+h2 {
+    width: 80%;
+    margin: auto;
+    margin-bottom: 20px;
+    font-weight: bold;
+
+}
+
+p {
+    margin-bottom: 40px;
+    margin: auto;
+}
+
+@media (min-width: 768px) {
+    h2 {
+        font-size: 40px;
+        width: 50%;
+    }
+
+    p {
+        width: 72%;
+        text-align: left;
+        padding-left: 100px;
+    }
+}

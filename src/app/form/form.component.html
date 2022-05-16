@@ -1,0 +1,47 @@
+<form class="d-flex flex-column justify-content-between" [formGroup]="learnForm">
+    <div class="position-relative">
+        <input type="text" placeholder="First Name" name="firstName" class="form-control" formControlName="fn">
+        <div *ngIf="fn?.invalid && (fn?.dirty || fn?.touched)">
+            <div *ngIf="fn?.errors?.['required']" class="invalid text-danger">
+                First Name cannot be empty
+                <i class=" fnameExc fa-solid fa-circle-exclamation text-danger fa-2x position-absolute"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="position-relative">
+        <input type="text" placeholder="Last Name" name="lastName" class="form-control" formControlName="ls">
+        <div *ngIf="ls?.invalid && (ls?.dirty || ls?.touched)">
+            <div *ngIf="ls?.errors?.['required']" class="invalid text-danger">
+                Last Name cannot be empty
+                <i class=" fnameExc fa-solid fa-circle-exclamation text-danger fa-2x position-absolute"></i>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="position-relative">
+        <input type="email" placeholder="Email Address" name="email" class="form-control" formControlName="em">
+        <div *ngIf="em?.invalid && (em?.dirty || em?.touched)">
+            <div *ngIf="em?.errors?.['required'] || em?.errors?.['pattern']" class="invalid text-danger">
+                Looks like this is not an email
+                <i class=" fnameExc fa-solid fa-circle-exclamation text-danger fa-2x position-absolute"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="position-relative">
+        <input type="password" placeholder="Password" name="password" class="form-control" formControlName="ps">
+        <div *ngIf="ps?.invalid && (ps?.dirty || ps?.touched)">
+            <div *ngIf="ps?.errors?.['required']" class="invalid text-danger">
+                Password cannot be empty
+                <i class=" fnameExc fa-solid fa-circle-exclamation text-danger fa-2x position-absolute"></i>
+            </div>
+        </div>
+    </div>
+
+    <input type="submit" value="Claim your free trial" [disabled]="!learnForm?.valid">
+    <p>By clicking the button, you are agreeing to our <span class="text-danger">Terms and Services</span>
+    </p>
+
+</form>

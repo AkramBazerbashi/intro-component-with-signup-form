@@ -1,1 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import '~bootstrap/dist/css/bootstrap.css';
+
+:root {
+    --color1: hsl(0, 100%, 74%);
+    --color2: hsl(154, 59%, 51%);
+    --color3: hsl(248, 32%, 49%);
+    --color4: hsl(249, 10%, 26%);
+    --color5: hsl(246, 25%, 77%);
+}
+
+body {
+    background-color: var(--color1);
+    background-image: url(assets/images/bg-intro-mobile.png);
+    font-family: 'Poppins', sans-serif;
+    padding: 20px;
+}
+
+@media (min-width: 768px){
+    body {
+        background-image: url(assets/images/bg-intro-desktop.png);
+    }
+
+    app-root {
+        display: flex;
+        align-items: center;
+        margin-top: 100px;
+    }
+}
